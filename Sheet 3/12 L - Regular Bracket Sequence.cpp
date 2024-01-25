@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <stack>
 
 using namespace std;
 
@@ -30,19 +31,19 @@ void s0lve()
 {
     string s;
     cin >> s;
-    ll cnt1 = 0, cnt2 = 0;
-    for (auto i : s)
+    stack<char> Stack;
+    for (int i = 0; i < s.size(); i++)
     {
-        if (i == '(')
-            cnt1++;
-        else if (i == ')' && cnt1 > 0)
-        {
-            cnt1--;
-            cnt2++;
-        }
+        if (!Stack.empty() && Stack.top() == s[i])
+            Stack.pop();
+        else
+            Stack.push(s[i]);
     }
-    cnt2 *= 2;
-    cout << cnt2;
+    string ans="";
+    while (!Stack.empty())
+        ans += Stack.top(), Stack.pop();
+    reverse(ans.begin(),ans.end());
+    cout << ans << endl;
 }
 
 signed main()
