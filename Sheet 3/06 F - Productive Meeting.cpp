@@ -2,7 +2,7 @@
 // صلِ على خير خلق الله محمد
 
 #include <iostream>
-#include <map>
+#include <vector>
 
 using namespace std;
 
