@@ -28,6 +28,21 @@ void jamika78_()
 
 void s0lve()
 {
+    string s;
+    cin >> s;
+    ll cnt1 = 0, cnt2 = 0;
+    for (auto i : s)
+    {
+        if (i == '(')
+            cnt1++;
+        else if (i == ')' && cnt1 > 0)
+        {
+            cnt1--;
+            cnt2++;
+        }
+    }
+    cnt2 *= 2;
+    cout << cnt2;
 }
 
 signed main()
