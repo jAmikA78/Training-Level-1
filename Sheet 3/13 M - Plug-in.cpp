@@ -28,6 +28,22 @@ void jamika78_()
 
 void s0lve()
 {
+
+    string s;
+    cin >> s;
+    stack<char> Stack;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (!Stack.empty() && Stack.top() == s[i])
+            Stack.pop();
+        else
+            Stack.push(s[i]);
+    }
+    string ans="";
+    while (!Stack.empty())
+        ans += Stack.top(), Stack.pop();
+    reverse(ans.begin(),ans.end());
+    cout << ans << endl;
 }
 
 signed main()
