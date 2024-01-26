@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <stack>
 
 using namespace std;
 
@@ -50,7 +51,7 @@ signed main()
 {
     jamika78_();
     ll tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (ll i = 0; i < tc; ++i)
         s0lve();
     return 0;
